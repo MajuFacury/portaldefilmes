@@ -1,0 +1,40 @@
+body{
+  background-color: beige;
+}
+
+.card {
+  margin-top: 2rem;
+  width: 18rem;
+}
+.row{
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar {
+  background-color: rgb(65, 42, 105);
+}
+
+.title{
+  display: flex;
+  justify-content: center;
+}
+h1{
+  margin-top: 2rem;
+  text-align: center;
+  background-color: rgb(65, 42, 105);
+  border-radius: 2cm;
+  width: 50%;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#nav-item{
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: x-large;
+  margin-left: 1rem;
+  color: beige;
+}
+
+.card-img-top{
+  margin-top: 0.5rem;
+}

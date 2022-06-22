@@ -1,0 +1,43 @@
+.pesquisa{
+    margin-top: 1.25rem;
+}
+.title{
+    display: flex;
+    justify-content: center;
+}
+.navbar{
+    background-color: rgb(65, 42, 105) ;
+}
+#nav-item{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: x-large;
+  margin-left: 1rem;
+  color: beige;
+}
+.row{
+    display: flex;
+    justify-content: space-around;
+}
+.card{
+    width: 30rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+.card-img-top{
+    margin-top: 0.5rem;
+}
+.card-text{
+    font-size: 1.2rem;
+}
+.list-group{
+    font-weight: bold;
+}
+h1{
+    margin-top: 2rem;
+    text-align: center;
+    background-color: rgb(65, 42, 105);
+    border-radius: 2cm;
+    width: 50%;
+    color:beige;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }

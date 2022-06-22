@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="detalhe.css">
+    <title>Facury Films</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" id="nav-item" href="#">Facury Films</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" id="nav-item" aria-current="page" href="index.html">Home</a>
+                </div>
+            </div>
+            <div class="pesquisa">
+                <div class="input-group mb-3">
+                    <form action=""><input type="search" name="Pesquisar" id="buscape"><button id="enviar" class="butao">&#128269</button></form>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="title">
+        <h1>DETALHES</h1>
+    </div>
+    <div class="container">
+        <div id="divDetalheFilme" class="row">
+
+        </div>
+    </div>
+    <script>
+        const params = new URLSearchParams(location.search)
+        let id = params.get('id')
+        dadosFilmes = JSON.parse(localStorage.getItem('db_filmes'));
+        let idxFilme = dadosFilmes.results.findIndex((elem) => elem.id == id)
+
+        if (idxFilme > -1) {
+            let filme = dadosFilmes.results[idxFilme];
+
+            document.getElementById('divDetalheFilme').innerHTML = `
+        <div class="card" style="width: 30rem;">
+  <img src="https://image.tmdb.org/t/p/w500/${filme.poster_path}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">${filme.title}</h5>
+    <p class="card-text">${filme.overview}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Votos: ${filme.popularity}</li>
+    <li class="list-group-item">Data de lançamento: ${filme.release_date}</li>
+    <li class="list-group-item">Classificação: ${filme.vote_average}</li>
+  </ul>
+</div>
+        `
+        }
+        else {
+            alert('Filme não encontrado!')
+        }
+    </script>
+    <script src="pesquisa.js"></script>
+</body>
+
+</html>
